@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Commit Conventions
 
-Currently, two official plugins are available:
+Este proyecto sigue una serie de convenciones de commits para asegurar que el historial de cambios sea consistente y fácil de entender. A continuación, se detallan los tipos de commits que se deben utilizar:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Convenciones de Commits
 
-## Expanding the ESLint configuration
+### `feat`
+- **Descripción**: Se utiliza cuando se agrega una nueva funcionalidad al proyecto.
+- **Ejemplo**: `feat: Add a new user login feature`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### `fix`
+- **Descripción**: Se utiliza para corregir un bug o un error en el código.
+- **Ejemplo**: `fix: Correct user authentication error`
 
-- Configure the top-level `parserOptions` property like this:
+### `chore`
+- **Descripción**: Se refiere a tareas menores, de mantenimiento o cambios que no afectan el código fuente ni las pruebas.
+- **Ejemplo**: `chore: Update dependencies`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### `docs`
+- **Descripción**: Se utiliza para cambios en la documentación del proyecto.
+- **Ejemplo**: `docs: Update README with installation instructions`
+
+### `style`
+- **Descripción**: Indica cambios en el formato o el estilo del código que no afectan la lógica o la funcionalidad (como la corrección de espacios, formato de código, etc.).
+- **Ejemplo**: `style: Apply consistent code formatting`
+
+### `refactor`
+- **Descripción**: Se utiliza para refactorizar el código sin añadir nuevas funcionalidades ni corregir errores.
+- **Ejemplo**: `refactor: Simplify login logic`
+
+### `test`
+- **Descripción**: Se refiere a la adición o modificación de pruebas unitarias o de integración.
+- **Ejemplo**: `test: Add tests for user registration`
+
+### `perf`
+- **Descripción**: Se utiliza para commits que mejoran el rendimiento del código.
+- **Ejemplo**: `perf: Optimize database queries`
+
+## Cómo Usar estas Convenciones:
+
+Al hacer un commit, asegúrate de utilizar el tipo de commit que mejor describa el cambio que estás realizando. Esto no solo ayuda a mantener el historial de cambios organizado, sino que también facilita la revisión de código y la colaboración en equipo.
+
+## Ejemplo de Uso:
+
+Si estás añadiendo una nueva funcionalidad para permitir que los usuarios restablezcan sus contraseñas, tu mensaje de commit podría verse así:
+
+```bash
+git commit -m "feat: Add password reset feature"
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Si estás corrigiendo un error relacionado con la autenticación de usuarios, el mensaje de commit podría ser:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+git commit -m "fix: Correct user authentication bug"
 ```
+
+## Contribuir con el crecimiento:
+
+Si tienes sugerencias para mejorar las convenciones de commits o para añadir nuevos tipos de commits, siéntete libre de abrir un issue o enviar un pull request.
